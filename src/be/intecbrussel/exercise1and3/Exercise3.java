@@ -1,19 +1,20 @@
 package be.intecbrussel.exercise1and3;
 
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 public class Exercise3 {
 
     private static Person person1 = new Person("Thor", "Stillwait", 33, 115.4f,
                                           2.02f,
-                                Person.Sexe.M);
+                                Person.Gender.M);
     private static Person person2 = new Person("Ben", "Blissful", 17, 71.7f,
                                              1.83f,
-                                Person.Sexe.M);
+                                Person.Gender.M);
     private static Person person3 = new Person("Issa", "Instupulous", 88, 71.0f,
-        1.75f, Person.Sexe.M);
+        1.75f, Person.Gender.M);
     private static Person person4 = new Person("Steffi", "Fabfluff", 49, 140.6f,
-                                        1.61f, Person.Sexe.F);
+                                        1.61f, Person.Gender.F);
 
     private static Person[] persons = {person1, person2, person3, person4};
 
@@ -31,6 +32,6 @@ public class Exercise3 {
     public static void streamToArray() {
         Person[] pArr = Stream.of(persons)
                 .toArray(Person[]::new);
-
+        System.out.println(Arrays.toString(pArr));
     }
 }

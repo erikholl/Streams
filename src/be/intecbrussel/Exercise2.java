@@ -25,7 +25,7 @@ public class Exercise2 {
     }
 
     public static void amountOfNumbers() {
-        int amount = (int) IntStream.of(intArr)
+        long amount = IntStream.of(intArr)
                 .count();
         System.out.println(amount);
     }
@@ -71,7 +71,8 @@ public class Exercise2 {
 
     public static void separatedByDotComma() {
        String separated = Stream.of(words)
-               .reduce(";", (acc, e) -> acc + e + ";");
+               .reduce("", (acc, e) -> acc + e + ";");
+       separated = separated.substring(0, separated.length() - 1);
         System.out.println(separated);
     }
 

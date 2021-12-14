@@ -26,17 +26,18 @@ public class Exercise1 {
 
     public static void createAndPrintPersonArray() {
         Person person1 = new Person("Frey", "Goodman", 31, 68.5f, 1.68f,
-                                    Person.Sexe.F);
+                                    Person.Gender.F);
         Person person2 = new Person("Mats", "Mudskip", 55, 93.2f, 1.90f,
-                                    Person.Sexe.M);
+                                    Person.Gender.M);
         Person person3 = new Person("Jane", "Jenkins", 27, 73.1f, 1.71f,
-                                    Person.Sexe.X);
+                                    Person.Gender.X);
 
 //        Person[] persons = new Person[3];
         Person[] persons = {person1, person2, person3};
 
-        Stream<Person> personStream = Stream.of(persons);
-        personStream.forEach(System.out::println);
+        Stream.of(persons)
+                .forEach(System.out::println); // method reference
+//        .forEach(e -> System.out.println(e)); // lambda
 
     }
 
